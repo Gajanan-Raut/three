@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+    <h1>Dashboard</h1>
+    <a href="/create"><button type="button">create task</button></a>
+
+    <table>
+        <tr>
+        <th>title</th>
+        <th>details</th>
+        <th>date</th>
+        </tr>
+
+        {% for d in data %}
+        <tr>
+
+        <td>{{d.title}}</td>
+        <td>{{d.details}}</td>
+        <td>{{d.date}}</td>
+        <td><a href="/edit/{{d.id}}"><button>Edit</button></a></td>
+        <td><a href="/delete/{{d.id}}"><button>Delete</button></a></td>
+
+    </tr>
+        {% endfor %}
+    </table>
+
+{% endblock 'main' %}

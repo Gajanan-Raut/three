@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="mt-5">update task</h2>
+    {% for d in data %}
+<div class="col-md-8 mt-3 m-auto">
+
+<div class="col-md-8">
+    
+    <form method="POST" action="/edit/{{d.id}}">
+        {% csrf_token %}
+      <div class=mb-3">
+        <label for="tid" class="form-label">Title:</label>
+        <input type="text" class="form-control" name="t" id="tid" placeholder="{{d.title}}">
+      </div>
+  
+      <div class="mb-3">
+        <label for="detid" class="form-label">Details:</label>
+        <textarea class="form-control" name="det" id="detid" rows="3">{{d.details}}</textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="dtid" class="form-label">Date:</label>
+        <input type="date" class="form-control" name="dt" id="dtid" >
+      </div>
+      {{d.date}}
+  
+      <div class="mb-3">
+        
+        <input type="submit" class="form-control btn btn-primary" name="send" id="tid" value="UPDATE" >
+      </div>
+    </form>
+    
+  </div>
+  {% endfor %}
+</body>
+</html>

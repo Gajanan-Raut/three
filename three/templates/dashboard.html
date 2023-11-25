@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Duretions</th>
+            <th>Course Categary</th>
+            <th>Course Price</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{d.cname}}</td>
+            <td>{{d.cdur}}</td>
+            <td>{{d.ccat}}</td>
+            <td>{{d.cprice}}</td>
+            <td><a href="/edit/{{d.id}}"><button>Edit</button></a></td>
+            <td><a href="/delete/{{d.id}}"><button>Delete</button></a></td>
+
+            <p><a href=""><button class="btn btn-danger">Python</button></a>
+                <a href=""><button class="btn btn-danger">Data Science</button></a>
+               
+            </p>
+            <p>
+              <a href=""><button class="btn btn-danger">Data Analyst</button></a> 
+                <a href=""><button class="btn btn-danger">Java</button></a>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>sord by</h1>
+    <h3><a href="/all">All</a></h3>
+    <a href="/htol">high to low</a><br>
+    <a href="/ltoh">low to high</a>
+
+</body>
+</html>
