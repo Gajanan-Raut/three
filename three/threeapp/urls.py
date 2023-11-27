@@ -7,7 +7,7 @@ urlpatterns = [
     path('about',views.about),
     path('create',views.create),
     path('delete/<n>',views.delete),
-    path('edit/<n>',views.edit),
+    # path('edit/<n>',views.edit),
     path('dashboard',views.dashboard),
     path('all',views.dashboard),
     path('htol',views.htol),

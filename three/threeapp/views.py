@@ -51,21 +51,21 @@ def delete(request,n):
     x=Task.objects.filter(id=n)
     x.update(is_deletes='Y')
     return redirect('/about')
-def edit(request,n):
-    if request.method=='POST':
-        ut=request.POST['t']
-        udet=request.POST['det']
-        udt=request.POST['dt']
+# def edit(request,n):
+#     if request.method=='POST':
+#         ut=request.POST['t']
+#         udet=request.POST['det']
+#         udt=request.POST['dt']
         
         
-        x=Task.objects.filter(id=n)
-        x.update(title=ut,details=udet,date=udt)
-        return redirect('/about')
-    else:
-        content={}
-        content['data']=Task.objects.filter(id=n)
+#         x=Task.objects.filter(id=n)
+#         x.update(title=ut,details=udet,date=udt)
+#         return redirect('/about')
+#     else:
+#         content={}
+#         content['data']=Task.objects.filter(id=n)
     
-        return render(request,'edit.html',content)
+#         return render(request,'edit.html',content)
     
 def dashboard(request):
     content={}
